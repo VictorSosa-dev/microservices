@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          defaul-label: config-server
+          default-label: config-server
           uri: https://github.com/VictorSosa-dev/microservices
           search-paths: config-data
   application:
