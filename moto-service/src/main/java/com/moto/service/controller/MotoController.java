@@ -48,9 +48,9 @@ public class MotoController {
 		return ResponseEntity.ok(nuevoMoto);
 	}
 	
-	@GetMapping("/user/{userId}")
-	public ResponseEntity<List<Moto>> listarMotosPorUsuarioID(@PathVariable("userId") int id){
-		List<Moto> motos = motoService.byUserId(id);
+	@GetMapping("/usuario/{usuarioId}")
+	public ResponseEntity<List<Moto>> listarMotosPorUsuarioID(@PathVariable("usuarioId") int id){
+		List<Moto> motos = motoService.byUsuarioId(id);
 		if(motos.isEmpty()) {
 			return ResponseEntity.noContent().build();
 		}

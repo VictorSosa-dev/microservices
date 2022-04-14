@@ -28,7 +28,7 @@ public class MotoService {
 		return nuevoMoto;
 	}
 	
-	public List<Moto> byUserId(int id){
-		return motoRepository.findByUserId(id);
+	public List<Moto> byUsuarioId(int id){
+		return motoRepository.findByUsuarioId(id);
 	}
 }

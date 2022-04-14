@@ -1,4 +1,4 @@
-package com.moto.service.model;
+package com.carro.service.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,8 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Moto {
-
+public class Carro {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -15,8 +15,8 @@ public class Moto {
 	private String marca;
 	private String modelo;
 	private int usuarioId;
+	
 	public int getId() {
-		
 		return id;
 	}
 	public void setId(int id) {
@@ -40,5 +40,6 @@ public class Moto {
 	public void setUsuarioId(int usuarioId) {
 		this.usuarioId = usuarioId;
 	}
-
+	
+	
 }
