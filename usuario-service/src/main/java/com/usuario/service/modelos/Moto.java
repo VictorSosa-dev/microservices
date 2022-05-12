@@ -4,13 +4,13 @@ public class Moto {
 	
 	private String marca;
 	private String modelo;
-	private int userId;
+	private int usuarioId;
 	
-	public int getUserId() {
-		return userId;
+	public int getUsuarioId() {
+		return usuarioId;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUsuarioId(int usuarioId) {
+		this.usuarioId = usuarioId;
 	}
 	public String getMarca() {
 		return marca;

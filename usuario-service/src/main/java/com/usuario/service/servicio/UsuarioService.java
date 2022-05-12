@@ -49,7 +49,7 @@ public class UsuarioService {
 	}
 	
 	public Moto saveMoto(int usuarioId, Moto moto) {
-		moto.setUserId(usuarioId);
+		moto.setUsuarioId(usuarioId);
 		Moto nuevaMoto = motoFeignClient.save(moto);
 		return nuevaMoto;
 	}
