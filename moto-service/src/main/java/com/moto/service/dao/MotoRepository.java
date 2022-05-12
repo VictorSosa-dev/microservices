@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.moto.service.model.Moto;
 
 public interface MotoRepository extends JpaRepository<Moto, Integer>{
-	List<Moto> findByUsuarioId(int userId); 
+	List<Moto> findByUsuarioId(int usuarioId); 
 
 }

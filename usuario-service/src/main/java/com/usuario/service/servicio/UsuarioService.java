@@ -49,29 +49,29 @@ public class UsuarioService {
 	}
 	
 	public Moto saveMoto(int usuarioId, Moto moto) {
-		moto.setUserId(usuarioId);
+		moto.setUsuarioId(usuarioId);
 		Moto nuevaMoto = motoFeignClient.save(moto);
 		return nuevaMoto;
 	}
 	
 	
-	public Map<String,Object> getUserAutos(int userId){
+	public Map<String,Object> getUserAutos(int usuarioId){
 		Map<String,Object> resultado = new HashMap<>();
-		Usuario usuario = usuarioRepository.findById(userId).orElse(null);
+		Usuario usuario = usuarioRepository.findById(usuarioId).orElse(null);
 		if(usuario == null) {
 			resultado.put("Mensaje", "El usuario no existe");
 			return resultado;
 		}
 		
 		resultado.put("Usuario", usuario);
-		List<Carro> carros = carroFeignClient.getCarros(userId);
+		List<Carro> carros = carroFeignClient.getCarros(usuarioId);
 		if(carros.isEmpty()) {
 			resultado.put("Carros", "El usuario no tiene carros");
 		}else {
 			resultado.put("Carros", carros);
 		}
 		
-		List<Moto> motos = motoFeignClient.getMotos(userId);
+		List<Moto> motos = motoFeignClient.getMotos(usuarioId);
 		if(motos.isEmpty()) {
 			resultado.put("Motos", "El usuario no tiene motos");
 		}else {
@@ -84,7 +84,7 @@ public class UsuarioService {
 		return usuarioRepository.findAll();
 	}
 
-	public Usuario getUserById(int id) {
+	public Usuario getUsuarioById(int id) {
 		return usuarioRepository.findById(id).orElse(null);
 	}
 

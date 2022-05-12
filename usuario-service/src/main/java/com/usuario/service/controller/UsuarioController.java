@@ -35,7 +35,7 @@ public class UsuarioController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Usuario> getById(@PathVariable("id") int id){
-		Usuario usuario = usuarioService.getUserById(id);
+		Usuario usuario = usuarioService.getUsuarioById(id);
 		if(usuario == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -52,7 +52,7 @@ public class UsuarioController {
 	
 	@GetMapping("/carros/{usuarioId}")
 	public ResponseEntity<List<Carro>> getCarros(@PathVariable("usuarioId") int id){
-		Usuario usuario = usuarioService.getUserById(id);
+		Usuario usuario = usuarioService.getUsuarioById(id);
 		if(usuario == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -62,7 +62,7 @@ public class UsuarioController {
 	
 	@GetMapping("/motos/{usuarioId}")
 	public ResponseEntity<List<Moto>> getMotos(@PathVariable("usuarioId") int id){
-		Usuario usuario = usuarioService.getUserById(id);
+		Usuario usuario = usuarioService.getUsuarioById(id);
 		if(usuario == null) {
 			return ResponseEntity.notFound().build();
 		}
